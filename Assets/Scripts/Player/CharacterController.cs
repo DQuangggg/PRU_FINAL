@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class CharacterController : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     public AudioClip deathClip;
 
+    SpawPoint spawPoint;
+
     public int hearts = 5;
 
     void Start()
@@ -29,8 +32,8 @@ public class CharacterController : MonoBehaviour
         animator = GetComponent<Animator>();
         facingRight = true;
         audioSource = gameObject.GetComponent<AudioSource>();
-
-
+        
+        spawPoint = GameObject.FindGameObjectWithTag("SpawnPoint").GetComponent<SpawPoint>();
     }
 
     // Update is called once per frame
@@ -109,7 +112,7 @@ public class CharacterController : MonoBehaviour
             else
             {
                 animator.SetBool("dead", false);
-                transform.position = new Vector3(12, 10, 0);
+                transform.position = new Vector3(spawPoint.transform.position.x, spawPoint.transform.position.y, 0);
             }
         }
     }
