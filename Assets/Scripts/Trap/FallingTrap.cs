@@ -15,7 +15,7 @@ public class FallingTrap : MonoBehaviour
             if (collision.gameObject.tag == "Player")
             {
                 rb.isKinematic = false;
-                rb.gravityScale = 8f;
+                rb.gravityScale = 2f;
                 fall = true;
             }
         }
@@ -25,7 +25,11 @@ public class FallingTrap : MonoBehaviour
     {
         if (collision.gameObject.tag == "Hazard")
         {
-            gameObject.tag = "Ground";
+            gameObject.tag = "Hazard";
+        }
+        if (collision.gameObject.tag == "Trap")
+        {
+            gameObject.tag = "Trap";
         }
     }
 }
