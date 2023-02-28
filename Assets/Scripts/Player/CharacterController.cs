@@ -85,15 +85,10 @@ public class CharacterController : MonoBehaviour
             grounded = true;
 
         }
-        if (collision.gameObject.tag == "Wall")
-        {
-            speed = 0;
-            animator.SetBool("jump", false);
-        }
         if (collision.gameObject.tag == "Trap")
         {
             animator.SetBool("dead", true);
-            //Instantiate(BloodEffect, transform.position, transform.rotation);
+            Instantiate(BloodEffect, transform.position, transform.rotation);
             audioSource.PlayOneShot(deathClip);
             StartCoroutine(waiter());
         }
