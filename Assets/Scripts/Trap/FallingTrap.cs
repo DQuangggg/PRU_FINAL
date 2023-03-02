@@ -23,9 +23,9 @@ public class FallingTrap : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Hazard")
+        if (collision.gameObject.tag == "Ground")
         {
-            gameObject.tag = "Hazard";
+            gameObject.tag = "Ground";
         }
         if (collision.gameObject.tag == "Trap")
         {
