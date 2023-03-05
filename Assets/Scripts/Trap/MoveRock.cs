@@ -4,26 +4,62 @@ using UnityEngine;
 
 public class MoveRock : MonoBehaviour
 {
-    public float xDistanceToMainCharacter;
-    public float xMoveDistance;
-    public float yMoveDistance;
+    public GameObject rotationPivot;
 
-    public Vector3 destination;
+    //to check rotate
+    bool rotateForward = false;
+    bool rotateBack = false;
+
+    //Max position: used to stop rotation
+    float maxRotateX;
+    float minRotateX;
+    float maxRotateY;
 
     void Start()
     {
-        destination = new Vector3(this.gameObject.transform.position.x + xMoveDistance, this.gameObject.transform.position.y + yMoveDistance);
+        float distance = rotationPivot.transform.position.x - transform.position.x;
+        maxRotateX = transform.position.x + 2 * distance;
+        minRotateX = transform.position.x;
+        maxRotateY = transform.position.y;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        //float dis = Mathf.Abs(this.gameObject.transform.position.x - player.transform.position.x);
-        //Debug.Log(dis);
-        if (Mathf.Abs(this.gameObject.transform.position.x - player.transform.position.x) < xDistanceToMainCharacter)
+        if (rotateForward)
         {
-            transform.position = Vector3.MoveTowards(transform.position, destination, Time.deltaTime * 3);
+            Vector3 point = rotationPivot.transform.position;
+            Vector3 axis = new Vector3(0, 0, 1);
+            transform.RotateAround(point, axis, 50 * Time.deltaTime);
+
+            //stop rotate if reach position
+            if (transform.position.x >= maxRotateX || transform.position.y >= maxRotateY)
+            {
+                rotateForward = false;
+            }
+
         }
+        else if (rotateBack)
+        {
+            Vector3 point = rotationPivot.transform.position;
+            Vector3 axis = new Vector3(0, 0, 1);
+            transform.RotateAround(point, axis, -50 * Time.deltaTime);
+
+            //stop rotate if reach position
+            if (transform.position.x <= minRotateX || transform.position.y >= maxRotateY)
+            {
+                rotateBack = false;
+            }
+        }
+    }
+
+    public void RotateForward()
+    {
+        rotateForward = true;
+    }
+
+    public void RotateBack()
+    {
+        rotateBack = true;
     }
 }
