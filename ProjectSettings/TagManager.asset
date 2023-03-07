@@ -8,6 +8,7 @@ TagManager:
   - Trap
   - SpawnPoint
   - Hazard
+  - SpawnPoint2
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,7 @@ public class FallingTrap : MonoBehaviour
             {
                 rb.isKinematic = false;
                 rb.gravityScale = 2f;
+                rb.mass = 5;
                 fall = true;
             }
         }
@@ -23,9 +24,9 @@ public class FallingTrap : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Hazard")
         {
-            gameObject.tag = "Ground";
+            gameObject.tag = "Hazard";
         }
         if (collision.gameObject.tag == "Trap")
         {
