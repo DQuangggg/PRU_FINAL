@@ -98,7 +98,7 @@ public class CharacterController : MonoBehaviour
             //stop all movement on main character
             gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
             hearts--;
             if (hearts <= 0)
             {
