@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,20 +24,38 @@ public class CharacterController : MonoBehaviour
     public AudioClip deathClip;
 
     SpawPoint spawPoint;
+    SpawPoint spawPoint1;
 
     public int hearts = 5;
 
+
+    public CinemachineVirtualCamera camera1;
+    public CinemachineVirtualCamera camera2;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         facingRight = true;
         audioSource = gameObject.GetComponent<AudioSource>();
-        
+
         spawPoint = GameObject.FindGameObjectWithTag("SpawnPoint").GetComponent<SpawPoint>();
+        spawPoint1 = GameObject.FindGameObjectWithTag("SpawPoint1").GetComponent<SpawPoint>();
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        if (transform.position.x >= 27)
+        {
+            camera1.enabled = false;
+            camera2.enabled = true;
+        }
+        else
+        {
+            camera1.enabled = true;
+            camera2.enabled = false;
+        }
+    }
     void FixedUpdate()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");
@@ -86,7 +105,7 @@ public class CharacterController : MonoBehaviour
 
         }
         if (collision.gameObject.tag == "Trap")
-        {
+        {          
             animator.SetBool("dead", true);
             Instantiate(BloodEffect, transform.position, transform.rotation);
             audioSource.PlayOneShot(deathClip);
@@ -96,7 +115,8 @@ public class CharacterController : MonoBehaviour
         IEnumerator waiter()
         {
             //stop all movement on main character
-            gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            //gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            rb.bodyType = RigidbodyType2D.Static;
 
             yield return new WaitForSeconds(0.5f);
             hearts--;
@@ -107,7 +127,19 @@ public class CharacterController : MonoBehaviour
             else
             {
                 animator.SetBool("dead", false);
-                transform.position = new Vector3(spawPoint.transform.position.x, spawPoint.transform.position.y, 0);
+                if (transform.position.x >= spawPoint1.transform.position.x)
+                {
+                    transform.position = new Vector3(spawPoint1.transform.position.x, spawPoint1.transform.position.y, 0);
+                    camera1.enabled = false;
+                    camera2.enabled = true;
+                }
+                else
+                {
+                    transform.position = new Vector3(spawPoint.transform.position.x, spawPoint.transform.position.y, 0);
+                    camera1.enabled = true;
+                    camera2.enabled = false;
+                }
+                rb.bodyType = RigidbodyType2D.Dynamic;
             }
         }
     }

@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Undefined
+  - Trap
+  - Ground
+  - SpawnPoint
+  - Hazard
+  - SpawPoint1
   layers:
   - Default
   - TransparentFX
