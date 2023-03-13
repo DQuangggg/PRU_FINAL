@@ -26,6 +26,7 @@ public class CharacterController : MonoBehaviour
 
     public int hearts = 5;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -91,14 +92,13 @@ public class CharacterController : MonoBehaviour
             Instantiate(BloodEffect, transform.position, transform.rotation);
             audioSource.PlayOneShot(deathClip);
             StartCoroutine(waiter());
-        }
+        }  
 
         IEnumerator waiter()
         {
             //stop all movement on main character
-            gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-
-            yield return new WaitForSeconds(1f);
+            rb.bodyType = RigidbodyType2D.Static;
+            yield return new WaitForSeconds(0.5f);
             hearts--;
             if (hearts <= 0)
             {
@@ -108,7 +108,9 @@ public class CharacterController : MonoBehaviour
             {
                 animator.SetBool("dead", false);
                 transform.position = new Vector3(spawPoint.transform.position.x, spawPoint.transform.position.y, 0);
+                rb.bodyType = RigidbodyType2D.Dynamic;
             }
         }
+
     }
 }
