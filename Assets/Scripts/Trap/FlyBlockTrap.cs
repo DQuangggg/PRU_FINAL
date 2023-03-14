@@ -1,20 +1,18 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveBlockTrap : MonoBehaviour
+public class FlyBlockTrap : MonoBehaviour
 {
     new Rigidbody2D rb;
     bool fly = false;
     public float gravity;
 
-    private GameObject moveBlockPrefab;
+    private GameObject flyBlockPrefab;
     private Vector3 blockPosition;
 
-    void Start() {
-        blockPosition = transform.position;
-        moveBlockPrefab = (GameObject)Resources.Load(@"Prefabs\FallTrap");
+    void Start()
+    {
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -29,19 +27,13 @@ public class MoveBlockTrap : MonoBehaviour
                 fly = true;
             }
         }
-        else {
+        else
+        {
             if (collision.gameObject.tag == "Trap")
             {
-                gameObject.SetActive(false);
-                Invoke("LoadResource",2f);
+                Destroy(gameObject);
             }
         }
     }
-
-    void LoadResource() {
-        GameObject newObject =Instantiate(moveBlockPrefab, blockPosition, Quaternion.identity.normalized);
-        newObject.SetActive(true); 
-    }
-
-
 }
+

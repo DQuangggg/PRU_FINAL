@@ -16,7 +16,7 @@ public class FallingTrap : MonoBehaviour
             {
                 rb.isKinematic = false;
                 rb.gravityScale = 2f;
-                rb.mass = 5;
+                rb.mass = 4;
                 fall = true;
             }
         }

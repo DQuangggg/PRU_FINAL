@@ -6,8 +6,8 @@ using UnityEngine.UIElements;
 
 public class CharacterController : MonoBehaviour
 {
-    [SerializeField] private float speed = 30f;
-    [SerializeField] private float jump = 400f;
+    [SerializeField] private float speed ;
+    [SerializeField] private float jump ;
     public GameObject BloodEffect;
     float horizontalMove;
     bool facingRight;
