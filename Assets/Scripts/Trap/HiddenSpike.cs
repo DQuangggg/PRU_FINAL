@@ -24,9 +24,9 @@ public class HiddenSpike : MonoBehaviour
     void Update()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        //float dis = Mathf.Abs(this.gameObject.transform.position.x - player.transform.position.x);
-        //float dis1 = Mathf.Abs(this.gameObject.transform.position.y - player.transform.position.y);
-        //Debug.Log(dis +" and "+ dis1);
+        float dis = Mathf.Abs(this.gameObject.transform.position.x - player.transform.position.x);
+        float dis1 = Mathf.Abs(this.gameObject.transform.position.y - player.transform.position.y);
+        Debug.Log(dis + " and " + dis1);
 
         if (Mathf.Abs(this.gameObject.transform.position.x - player.transform.position.x) < xDistanceToMainCharacter ||
             Mathf.Abs(this.gameObject.transform.position.y - player.transform.position.y) < yDistanceToMainCharacter)

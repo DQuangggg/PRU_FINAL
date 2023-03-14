@@ -29,8 +29,8 @@ public class CharacterController : MonoBehaviour
     public int hearts = 5;
 
 
-    public CinemachineVirtualCamera camera1;
-    public CinemachineVirtualCamera camera2;
+    //public CinemachineVirtualCamera camera1;
+    //public CinemachineVirtualCamera camera2;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,19 +43,19 @@ public class CharacterController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (transform.position.x >= 27)
-        {
-            camera1.enabled = false;
-            camera2.enabled = true;
-        }
-        else
-        {
-            camera1.enabled = true;
-            camera2.enabled = false;
-        }
-    }
+    //void Update()
+    //{
+    //    if (transform.position.x >= 27)
+    //    {
+    //        camera1.enabled = false;
+    //        camera2.enabled = true;
+    //    }
+    //    else
+    //    {
+    //        camera1.enabled = true;
+    //        camera2.enabled = false;
+    //    }
+    //}
     void FixedUpdate()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");
@@ -99,10 +99,9 @@ public class CharacterController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Hazard")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Hazard"|| collision.gameObject.tag == "Podium")
         {
             grounded = true;
-
         }
         if (collision.gameObject.tag == "Trap")
         {          
@@ -130,14 +129,14 @@ public class CharacterController : MonoBehaviour
                 if (transform.position.x >= spawPoint1.transform.position.x)
                 {
                     transform.position = new Vector3(spawPoint1.transform.position.x, spawPoint1.transform.position.y, 0);
-                    camera1.enabled = false;
-                    camera2.enabled = true;
+                    //camera1.enabled = false;
+                    //camera2.enabled = true;
                 }
                 else
                 {
                     transform.position = new Vector3(spawPoint.transform.position.x, spawPoint.transform.position.y, 0);
-                    camera1.enabled = true;
-                    camera2.enabled = false;
+                    //camera1.enabled = true;
+                    //camera2.enabled = false;
                 }
                 rb.bodyType = RigidbodyType2D.Dynamic;
             }

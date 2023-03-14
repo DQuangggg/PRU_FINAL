@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: 806b857a65bffb14a9c8891925318295
+guid: cdcd4713744c8754b876a748af286767
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 6723963429988506304
-    second: Spikes_0
-  - first:
-      213: -7010832575621253078
-    second: Spikes_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -53,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -108,7 +102,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -120,7 +114,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -147,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spikes_0
+      name: spike-ball_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 14
-        height: 16
+        x: 0
+        y: 1
+        width: 234
+        height: 234
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ca9e2f4d11505d50800000000000000
-      internalID: 6723963429988506304
+      spriteID: c7a73416f63952c418b29ec288ec42cc
+      internalID: 1823659398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spikes_1
+      name: spike-ball_1
       rect:
         serializedVersion: 2
-        x: 19
-        y: 0
-        width: 11
-        height: 17
+        x: 235
+        y: 1
+        width: 234
+        height: 234
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a28bb5edae484be90800000000000000
-      internalID: -7010832575621253078
+      spriteID: e16865e14bfe50d40b96c9f212be0a98
+      internalID: 2052147667
       vertices: []
       indices: 
       edges: []
@@ -199,8 +193,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spikes_1: -7010832575621253078
-      Spikes_0: 6723963429988506304
+      spike-ball_0: 1823659398
+      spike-ball_1: 2052147667
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

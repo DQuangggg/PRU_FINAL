@@ -10,14 +10,16 @@ TagManager:
   - SpawnPoint
   - Hazard
   - SpawPoint1
+  - Laze
+  - Podium
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - TrapLayer
   - Water
   - UI
-  - 
+  - GroundLayer
   - 
   - 
   - 

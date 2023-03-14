@@ -16,28 +16,16 @@ public class MoveBlockTrap : MonoBehaviour
             if (collision.gameObject.tag == "Player")
             {
                 rb.isKinematic = false;
-                rb.gravityScale = -5f;  
+                rb.gravityScale = -5f;
                 fly = true;
             }
         }
-        else {
+        else
+        {
             if (collision.gameObject.tag == "Trap")
             {
                 Destroy(gameObject);
             }
         }
-    }
-
-
-    void Start()
-    {
-        
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
