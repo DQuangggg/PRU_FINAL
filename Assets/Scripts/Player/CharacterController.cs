@@ -23,6 +23,7 @@ public class CharacterController : MonoBehaviour
     public AudioClip deathClip;
 
     SpawPoint spawPoint;
+    SpawPoint spawPoint1;
 
     public int hearts = 5;
 
@@ -35,6 +36,7 @@ public class CharacterController : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
         
         spawPoint = GameObject.FindGameObjectWithTag("SpawnPoint").GetComponent<SpawPoint>();
+        spawPoint1 = GameObject.FindGameObjectWithTag("SpawnPoint1").GetComponent<SpawPoint>();
     }
 
     // Update is called once per frame
@@ -107,7 +109,14 @@ public class CharacterController : MonoBehaviour
             else
             {
                 animator.SetBool("dead", false);
-                transform.position = new Vector3(spawPoint.transform.position.x, spawPoint.transform.position.y, 0);
+                if (transform.position.x >= spawPoint1.transform.position.x)
+                {
+                    transform.position = new Vector3(spawPoint1.transform.position.x, spawPoint1.transform.position.y, 0);
+                }
+                else
+                {
+                    transform.position = new Vector3(spawPoint.transform.position.x, spawPoint.transform.position.y, 0);
+                }
                 rb.bodyType = RigidbodyType2D.Dynamic;
             }
         }

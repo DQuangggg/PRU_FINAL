@@ -39,7 +39,8 @@ public class MoveBlockTrap : MonoBehaviour
     }
 
     void LoadResource() {
-        GameObject newObject =Instantiate(moveBlockPrefab, blockPosition, Quaternion.identity.normalized);
+        GameObject newObject =Instantiate(moveBlockPrefab, blockPosition, Quaternion.identity);
+        Destroy(gameObject);
         newObject.SetActive(true); 
     }
 

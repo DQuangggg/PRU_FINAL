@@ -18,6 +18,7 @@ public class HiddenSpike : MonoBehaviour
     void Start()
     {
         destination = new Vector3(this.gameObject.transform.position.x + xMoveDistance, this.gameObject.transform.position.y + yMoveDistance);
+
     }
 
     // Update is called once per frame
