@@ -39,7 +39,6 @@ public class CharacterController : MonoBehaviour
         spawPoint1 = GameObject.FindGameObjectWithTag("SpawnPoint1").GetComponent<SpawPoint>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");
