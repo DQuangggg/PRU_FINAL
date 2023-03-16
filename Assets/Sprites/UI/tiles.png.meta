@@ -113,6 +113,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -3907,7 +3919,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tiles_145: 1307903965
+      tiles_30: -327686773
       tiles_66: -691804497
       tiles_74: 900556080
       tiles_33: -929422603
@@ -4085,8 +4097,8 @@ TextureImporter:
       tiles_175: -2105592656
       tiles_140: 1780501175
       tiles_164: -1747864243
-      tiles_30: -327686773
       tiles_25: 1385684674
+      tiles_145: 1307903965
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

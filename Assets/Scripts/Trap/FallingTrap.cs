@@ -26,7 +26,7 @@ public class FallingTrap : MonoBehaviour
     {
         if (collision.gameObject.tag == "Hazard")
         {
-            gameObject.tag = "Hazard";
+            gameObject.SetActive(false);
         }
         if (collision.gameObject.tag == "Trap")
         {
