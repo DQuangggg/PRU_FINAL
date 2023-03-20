@@ -8,6 +8,8 @@ TagManager:
   - Trap
   - SpawnPoint
   - Hazard
+  - FallDetected
+  - Next_Level
   layers:
   - Default
   - TransparentFX
