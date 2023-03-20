@@ -17,7 +17,7 @@ public class MoveBlockTrap : MonoBehaviour
         moveBlockPrefab = (GameObject)Resources.Load(@"Prefabs\FallTrap");
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         rb = GetComponent<Rigidbody2D>();
         if (!fly)
@@ -30,17 +30,37 @@ public class MoveBlockTrap : MonoBehaviour
             }
         }
         else {
-            if (collision.gameObject.tag == "Trap")
-            {
+            if (collision.gameObject.tag == "Trap") { 
                 gameObject.SetActive(false);
-                Invoke("LoadResource",2f);
+                Invoke("LoadResource", 4f);
             }
         }
     }
 
+    //void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    rb = GetComponent<Rigidbody2D>();
+    //    if (!fly)
+    //    {
+    //        if (collision.gameObject.tag == "Player")
+    //        {
+    //            rb.isKinematic = false;
+    //            rb.gravityScale = gravity;
+    //            fly = true;
+    //        }
+    //    }
+    //    else {
+    //        if (collision.gameObject.tag == "Trap")
+    //        {
+    //            gameObject.SetActive(false);
+    //            Invoke("LoadResource",2f);
+    //        }
+    //    }
+    //}
+
     void LoadResource() {
-        GameObject newObject =Instantiate(moveBlockPrefab, blockPosition, Quaternion.identity);
         Destroy(gameObject);
+        GameObject newObject =Instantiate(moveBlockPrefab, blockPosition, Quaternion.identity);
         newObject.SetActive(true); 
     }
 

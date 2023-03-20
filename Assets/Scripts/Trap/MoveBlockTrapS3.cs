@@ -17,10 +17,6 @@ public class MoveBlockTrapS3 : MonoBehaviour
         move = (GameObject)Resources.Load(@"Prefabs\Fall2");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

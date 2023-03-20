@@ -325,7 +325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8865121132199743981, guid: 0bfaa6ff839324b4ab346d3b7d36590c, type: 3}
       propertyPath: jump
-      value: 4.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8865121132199743981, guid: 0bfaa6ff839324b4ab346d3b7d36590c, type: 3}
       propertyPath: speed
@@ -351,6 +351,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 70a6c583cd59df245abf81d1b35a7329, type: 2}
+    - target: {fileID: 8865121132199743990, guid: 0bfaa6ff839324b4ab346d3b7d36590c, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8865121132199743991, guid: 0bfaa6ff839324b4ab346d3b7d36590c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1838,6 +1842,10 @@ PrefabInstance:
     - target: {fileID: 482380395785510773, guid: a02e234eb4c66cc46b4c641bd94e53b2, type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 2345869315200690136, guid: a02e234eb4c66cc46b4c641bd94e53b2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8424920881540526910, guid: a02e234eb4c66cc46b4c641bd94e53b2, type: 3}
       propertyPath: m_RootOrder
@@ -14850,11 +14858,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7858948930728929654, guid: 433967442cc91e948a4fcff9befc83d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.2044306
+      value: -2.759511
       objectReference: {fileID: 0}
     - target: {fileID: 7858948930728929654, guid: 433967442cc91e948a4fcff9befc83d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49499127
+      value: 0.4949765
       objectReference: {fileID: 0}
     - target: {fileID: 7858948930728929654, guid: 433967442cc91e948a4fcff9befc83d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26141,6 +26149,10 @@ PrefabInstance:
     - target: {fileID: 482380395785510773, guid: a02e234eb4c66cc46b4c641bd94e53b2, type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 2345869315200690136, guid: a02e234eb4c66cc46b4c641bd94e53b2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8424920881540526910, guid: a02e234eb4c66cc46b4c641bd94e53b2, type: 3}
       propertyPath: m_RootOrder
