@@ -20023,11 +20023,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7858948930728929654, guid: 433967442cc91e948a4fcff9befc83d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.549759
+      value: 18.11898
       objectReference: {fileID: 0}
     - target: {fileID: 7858948930728929654, guid: 433967442cc91e948a4fcff9befc83d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5290065
+      value: 0.5290067
       objectReference: {fileID: 0}
     - target: {fileID: 7858948930728929654, guid: 433967442cc91e948a4fcff9befc83d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36360,6 +36360,7 @@ MonoBehaviour:
   target: {fileID: 187896710}
   speed: 15
   stopDistance: 2
+  initialPosition: {fileID: 0}
 --- !u!61 &1352340246
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37157,6 +37158,7 @@ MonoBehaviour:
   target: {fileID: 187896710}
   speed: 15
   stopDistance: 2
+  initialPosition: {fileID: 0}
 --- !u!4 &1589636811 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5776314011060876534, guid: 04811825bcc7cf940bb804c4cf843546, type: 3}

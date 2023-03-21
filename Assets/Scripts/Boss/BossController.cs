@@ -18,6 +18,8 @@ public class BossController : MonoBehaviour
     private bool isKilled;
     private bool lookRight;
 
+    public Transform initialPosition;
+
     private int currentPoint = 0;
 
     private void Start()
@@ -26,6 +28,13 @@ public class BossController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         curentPoint = point2.transform;
 
+    }
+
+
+    public void ResetPosition()
+    {
+        transform.position = initialPosition.position;
+        isKilled = false;
     }
     void Update()
     {

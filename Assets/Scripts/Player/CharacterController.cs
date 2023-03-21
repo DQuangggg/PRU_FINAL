@@ -1,4 +1,4 @@
-using Cinemachine;
+﻿using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +25,9 @@ public class CharacterController : MonoBehaviour
 
     SpawPoint spawPoint;
     SpawPoint spawPoint1;
+
+
+    public bool isRefresh = false;
 
     public int hearts = 5;
     void Start()
@@ -79,6 +82,11 @@ public class CharacterController : MonoBehaviour
         transform.localScale = scale;
     }
 
+    public bool GetIsRefresh()
+    {
+        return isRefresh;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Hazard"|| collision.gameObject.tag == "Podium")
@@ -92,6 +100,8 @@ public class CharacterController : MonoBehaviour
             audioSource.PlayOneShot(deathClip);
             StartCoroutine(waiter());
         }
+
+
 
         IEnumerator waiter()
         {
@@ -108,6 +118,7 @@ public class CharacterController : MonoBehaviour
             else
             {
                 animator.SetBool("dead", false);
+                isRefresh = true;
                 if (transform.position.x >= spawPoint1.transform.position.x)
                 {
                     transform.position = new Vector3(spawPoint1.transform.position.x, spawPoint1.transform.position.y, 0);
@@ -117,7 +128,19 @@ public class CharacterController : MonoBehaviour
                     transform.position = new Vector3(spawPoint.transform.position.x, spawPoint.transform.position.y, 0);
                 }
                 rb.bodyType = RigidbodyType2D.Dynamic;
+                //// Lấy index của scene đang chạy
+                //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+                //// Tải lại scene hiện tại với LoadSceneMode.Single
+                //SceneManager.LoadScene(currentSceneIndex, LoadSceneMode.Single);
+
+                yield return new WaitForSeconds(1f);
+                isRefresh = false;
             }
         }
+
+        
+
+
     }
 }
