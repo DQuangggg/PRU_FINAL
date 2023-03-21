@@ -2342,6 +2342,7 @@ GameObject:
   - component: {fileID: 493213474}
   - component: {fileID: 493213476}
   - component: {fileID: 493213475}
+  - component: {fileID: 493213477}
   m_Layer: 0
   m_Name: TX Tileset Ground_24 (1)
   m_TagString: Ground
@@ -2431,7 +2432,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6911323858483072790, guid: 69803dad84aaa934481618f1cb5f60db, type: 3}
+  m_Sprite: {fileID: 1847422516908647653, guid: 69803dad84aaa934481618f1cb5f60db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2442,6 +2443,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &493213477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493213473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0633d2abc786d449e1f589b1c65096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &556096567
 GameObject:
   m_ObjectHideFlags: 0
@@ -4041,6 +4054,7 @@ GameObject:
   - component: {fileID: 944448044}
   - component: {fileID: 944448046}
   - component: {fileID: 944448045}
+  - component: {fileID: 944448047}
   m_Layer: 0
   m_Name: TX Tileset Ground_24
   m_TagString: Ground
@@ -4130,7 +4144,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6911323858483072790, guid: 69803dad84aaa934481618f1cb5f60db, type: 3}
+  m_Sprite: {fileID: 1847422516908647653, guid: 69803dad84aaa934481618f1cb5f60db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4141,6 +4155,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &944448047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944448043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0633d2abc786d449e1f589b1c65096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &967724429
 GameObject:
   m_ObjectHideFlags: 0
@@ -5029,7 +5055,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315971290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.57, y: 1.4499999, z: -10}
+  m_LocalPosition: {x: 14.9800005, y: 2.23, z: -10}
   m_LocalScale: {x: 2.1275387, y: 2.393481, z: 2.1275387}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -5154,6 +5180,7 @@ GameObject:
   - component: {fileID: 1327285601}
   - component: {fileID: 1327285603}
   - component: {fileID: 1327285602}
+  - component: {fileID: 1327285604}
   m_Layer: 0
   m_Name: TX Tileset Ground_24 (2)
   m_TagString: Ground
@@ -5243,7 +5270,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6911323858483072790, guid: 69803dad84aaa934481618f1cb5f60db, type: 3}
+  m_Sprite: {fileID: 1847422516908647653, guid: 69803dad84aaa934481618f1cb5f60db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5254,6 +5281,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1327285604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327285600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0633d2abc786d449e1f589b1c65096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1345735988
 GameObject:
   m_ObjectHideFlags: 0
@@ -35791,11 +35830,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7858948930728929654, guid: 433967442cc91e948a4fcff9befc83d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.022194
+      value: 9.182002
       objectReference: {fileID: 0}
     - target: {fileID: 7858948930728929654, guid: 433967442cc91e948a4fcff9befc83d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4676799
+      value: 2.1489804
       objectReference: {fileID: 0}
     - target: {fileID: 7858948930728929654, guid: 433967442cc91e948a4fcff9befc83d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -35852,11 +35891,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8865121132199743976, guid: 0bfaa6ff839324b4ab346d3b7d36590c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.2
+      value: 14.35
       objectReference: {fileID: 0}
     - target: {fileID: 8865121132199743976, guid: 0bfaa6ff839324b4ab346d3b7d36590c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.43
+      value: 2.21
       objectReference: {fileID: 0}
     - target: {fileID: 8865121132199743976, guid: 0bfaa6ff839324b4ab346d3b7d36590c, type: 3}
       propertyPath: m_LocalPosition.z

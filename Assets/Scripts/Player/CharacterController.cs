@@ -106,9 +106,8 @@ public class CharacterController : MonoBehaviour
             if (hearts <= 0)
             {
                 audioSource.PlayOneShot(gameOverClip);
-
                 //Cho nay cho Mai 
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             else
             {
