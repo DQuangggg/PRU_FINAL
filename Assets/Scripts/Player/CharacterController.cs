@@ -21,6 +21,8 @@ public class CharacterController : MonoBehaviour
     public AudioClip jumpClip;
     [SerializeField]
     public AudioClip deathClip;
+    [SerializeField]
+    public AudioClip gameOverClip;
 
     SpawPoint spawPoint;
     SpawPoint spawPoint1;
@@ -103,7 +105,10 @@ public class CharacterController : MonoBehaviour
             hearts--;
             if (hearts <= 0)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                audioSource.PlayOneShot(gameOverClip);
+
+                //Cho nay cho Mai 
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             else
             {

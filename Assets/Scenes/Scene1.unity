@@ -35791,11 +35791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7858948930728929654, guid: 433967442cc91e948a4fcff9befc83d5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.8471575
+      value: -7.022194
       objectReference: {fileID: 0}
     - target: {fileID: 7858948930728929654, guid: 433967442cc91e948a4fcff9befc83d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4685521
+      value: 1.4676799
       objectReference: {fileID: 0}
     - target: {fileID: 7858948930728929654, guid: 433967442cc91e948a4fcff9befc83d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -35906,6 +35906,10 @@ PrefabInstance:
       propertyPath: BloodEffect
       value: 
       objectReference: {fileID: 1153375833199813859, guid: 2cbec23f4f12c2840a2eabc62c04b0b6, type: 3}
+    - target: {fileID: 8865121132199743981, guid: 0bfaa6ff839324b4ab346d3b7d36590c, type: 3}
+      propertyPath: gameOverClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 53ac4eb06c0993d42803766bd007a824, type: 3}
     - target: {fileID: 8865121132199743988, guid: 0bfaa6ff839324b4ab346d3b7d36590c, type: 3}
       propertyPath: m_Name
       value: MainCharacter
