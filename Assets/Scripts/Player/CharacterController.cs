@@ -1,4 +1,5 @@
-﻿using Cinemachine;
+﻿using Assets;
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,6 +40,16 @@ public class CharacterController : MonoBehaviour
 
         spawPoint = GameObject.FindGameObjectWithTag("SpawnPoint").GetComponent<SpawPoint>();
         spawPoint1 = GameObject.FindGameObjectWithTag("SpawPoint1").GetComponent<SpawPoint>();
+
+
+        if (PlayerPrefs.HasKey("PositionX") == true)
+        {
+
+            transform.position = new Vector3(PlayerPrefs.GetFloat("PositionX"), PlayerPrefs.GetFloat("PositionY"), 1);
+        }
+
+
+
     }
 
     void FixedUpdate()
@@ -89,12 +100,12 @@ public class CharacterController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Hazard"|| collision.gameObject.tag == "Podium")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Hazard" || collision.gameObject.tag == "Podium")
         {
             grounded = true;
         }
         if (collision.gameObject.tag == "Trap")
-        {          
+        {
             animator.SetBool("dead", true);
             Instantiate(BloodEffect, transform.position, transform.rotation);
             audioSource.PlayOneShot(deathClip);
@@ -117,6 +128,11 @@ public class CharacterController : MonoBehaviour
             }
             else
             {
+
+                TempUserData.Instance.SetCurrentPosition(spawPoint1.transform);
+                TempUserData.Instance.SetPlayerHealth(hearts);
+
+
                 animator.SetBool("dead", false);
                 isRefresh = true;
                 if (transform.position.x >= spawPoint1.transform.position.x)
@@ -132,14 +148,14 @@ public class CharacterController : MonoBehaviour
                 //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
                 //// Tải lại scene hiện tại với LoadSceneMode.Single
-                //SceneManager.LoadScene(currentSceneIndex, LoadSceneMode.Single);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
 
                 yield return new WaitForSeconds(1f);
                 isRefresh = false;
             }
         }
 
-        
+
 
 
     }

@@ -38,6 +38,12 @@ public class BossController : MonoBehaviour
     }
     void Update()
     {
+
+        if (target.GetComponent<CharacterController>().GetIsRefresh())
+        {
+
+        }
+
         if (target.transform.position.y <= -8f)
         {
             speed = 9f;
