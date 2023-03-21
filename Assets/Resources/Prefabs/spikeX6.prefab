@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xDistanceToMainCharacter: 0.5
-  yDistanceToMainCharacter: 0.1
+  yDistanceToMainCharacter: 0
   xMoveDistance: 0
   yMoveDistance: 0.12
   destination: {x: 0, y: 0, z: 0}

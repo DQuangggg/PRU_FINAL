@@ -6,6 +6,8 @@ public class FallingTrap : MonoBehaviour
 {
     new Rigidbody2D rb;
     bool fall = false;
+    public float gravity;
+    public float mass;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,8 +17,8 @@ public class FallingTrap : MonoBehaviour
             if (collision.gameObject.tag == "Player")
             {
                 rb.isKinematic = false;
-                rb.gravityScale = 2f;
-                rb.mass = 4;
+                rb.gravityScale = gravity;
+                rb.mass = mass;
                 fall = true;
             }
         }

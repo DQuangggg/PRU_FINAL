@@ -10,7 +10,6 @@ public class GoToNextLevel : MonoBehaviour
         if (collision.gameObject.tag == "Player") {
             var currentScene = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadSceneAsync(++currentScene);
-            Debug.Log(currentScene);
         }
     }
 }
