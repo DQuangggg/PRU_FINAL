@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -28,7 +29,13 @@ public class CharacterController : MonoBehaviour
     SpawPoint spawPoint1;
 
     public int hearts = 5;
+    public int currentHearts;
 
+
+    public GameObject pauseMenuScreen;
+    public UnityEngine.UI.Slider volumeSlider;
+    public AudioMixer mixer;
+    private float value;
 
     void Start()
     {
@@ -39,6 +46,7 @@ public class CharacterController : MonoBehaviour
         
         spawPoint = GameObject.FindGameObjectWithTag("SpawnPoint").GetComponent<SpawPoint>();
         spawPoint1 = GameObject.FindGameObjectWithTag("SpawnPoint1").GetComponent<SpawPoint>();
+        currentHearts = hearts;
     }
 
     void FixedUpdate()
@@ -103,6 +111,7 @@ public class CharacterController : MonoBehaviour
             rb.bodyType = RigidbodyType2D.Static;
             yield return new WaitForSeconds(0.5f);
             hearts--;
+            currentHearts = hearts; 
             if (hearts <= 0)
             {
                 audioSource.PlayOneShot(gameOverClip);
@@ -125,4 +134,37 @@ public class CharacterController : MonoBehaviour
         }
 
     }
+
+    public void pauseGame()
+    {
+        Time.timeScale = 0;
+        pauseMenuScreen.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        pauseMenuScreen.SetActive(false);
+    }
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+        pauseMenuScreen.SetActive(false);
+    }
+
+    public void SetMusic()
+    {
+        mixer.SetFloat("music", volumeSlider.value);
+    }
+
+    /* public void SetSound()
+     {
+         soundMixer.SetFloat("volumeSound", soundSlider.value);
+     }*/
 }
