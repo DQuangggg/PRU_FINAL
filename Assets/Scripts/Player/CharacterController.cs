@@ -1,8 +1,11 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
@@ -29,6 +32,10 @@ public class CharacterController : MonoBehaviour
 
     public int hearts = 5;
 
+    public GameObject pauseMenuScreen;
+    public UnityEngine.UI.Slider volumeSlider;
+    public AudioMixer mixer;
+    private float value;
 
     void Start()
     {
@@ -39,6 +46,12 @@ public class CharacterController : MonoBehaviour
         
         spawPoint = GameObject.FindGameObjectWithTag("SpawnPoint").GetComponent<SpawPoint>();
         spawPoint1 = GameObject.FindGameObjectWithTag("SpawnPoint1").GetComponent<SpawPoint>();
+
+        Time.timeScale = 1;
+        mixer.GetFloat("music", out value);
+        volumeSlider.value = value;
+        /*soundMixer.GetFloat("volumeSound", out value2);
+        soundSlider.value = value2;*/
     }
 
     void FixedUpdate()
@@ -106,8 +119,7 @@ public class CharacterController : MonoBehaviour
             if (hearts <= 0)
             {
                 audioSource.PlayOneShot(gameOverClip);
-                //Cho nay cho Mai 
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                replay();
             }
             else
             {
@@ -125,4 +137,34 @@ public class CharacterController : MonoBehaviour
         }
 
     }
+    public void pauseGame()
+    {
+        Time.timeScale = 0;
+        pauseMenuScreen.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        pauseMenuScreen.SetActive(false);
+    }
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void SetMusic()
+    {
+        mixer.SetFloat("music", volumeSlider.value);
+    }
+
+   /* public void SetSound()
+    {
+        soundMixer.SetFloat("volumeSound", soundSlider.value);
+    }*/
 }

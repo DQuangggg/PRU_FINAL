@@ -172,9 +172,13 @@ MonoBehaviour:
   jump: 4
   BloodEffect: {fileID: 0}
   audioSource: {fileID: 8865121132199743978}
-  jumpClip: {fileID: 8300000, guid: e3e9010b7a0812246a8f13795dc71b50, type: 3}
-  deathClip: {fileID: 8300000, guid: ebb537a2145e9ee4e8bf8a5f9495c53f, type: 3}
+  jumpClip: {fileID: 8300000, guid: b617ed497e1aabb40abe983f77b636f4, type: 3}
+  deathClip: {fileID: 8300000, guid: db056163b3afc0443b62861763785e63, type: 3}
+  gameOverClip: {fileID: 0}
   hearts: 5
+  pauseMenuScreen: {fileID: 0}
+  mixer: {fileID: 0}
+  soundMixer: {fileID: 0}
 --- !u!82 &8865121132199743978
 AudioSource:
   m_ObjectHideFlags: 0
