@@ -336,7 +336,7 @@ MonoBehaviour:
   m_text: Continue >>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 98097ced95991a244bfd68d8a7d36be6, type: 2}
-  m_sharedMaterial: {fileID: -942287175329513111, guid: 98097ced95991a244bfd68d8a7d36be6, type: 2}
+  m_sharedMaterial: {fileID: -4569539140455636850, guid: 98097ced95991a244bfd68d8a7d36be6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -574,7 +574,7 @@ MonoBehaviour:
   m_text: "Welcome to this forest. \nI am your guide on this adventure."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 98097ced95991a244bfd68d8a7d36be6, type: 2}
-  m_sharedMaterial: {fileID: -942287175329513111, guid: 98097ced95991a244bfd68d8a7d36be6, type: 2}
+  m_sharedMaterial: {fileID: -4569539140455636850, guid: 98097ced95991a244bfd68d8a7d36be6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
