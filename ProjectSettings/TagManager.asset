@@ -12,6 +12,11 @@ TagManager:
   - Teleporter
   - Podium
   - SpawPoint1
+  - FallDetected
+  - CircleKillBoss
+  - PushGround
+  - Ladder
+  - Audio
   layers:
   - Default
   - TransparentFX

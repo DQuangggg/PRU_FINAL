@@ -9,8 +9,8 @@ using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
-    [SerializeField] private float speed ;
-    [SerializeField] private float jump ;
+    [SerializeField] private float speed;
+    [SerializeField] private float jump;
     public GameObject BloodEffect;
     float horizontalMove;
     bool facingRight;
@@ -33,9 +33,13 @@ public class CharacterController : MonoBehaviour
     public int hearts = 5;
 
     public GameObject pauseMenuScreen;
-    public UnityEngine.UI.Slider volumeSlider;
-    public AudioMixer mixer;
-    private float value;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+    }
 
     void Start()
     {
@@ -43,15 +47,12 @@ public class CharacterController : MonoBehaviour
         animator = GetComponent<Animator>();
         facingRight = true;
         audioSource = gameObject.GetComponent<AudioSource>();
-        
+
         spawPoint = GameObject.FindGameObjectWithTag("SpawnPoint").GetComponent<SpawPoint>();
         spawPoint1 = GameObject.FindGameObjectWithTag("SpawnPoint1").GetComponent<SpawPoint>();
 
         Time.timeScale = 1;
-        mixer.GetFloat("music", out value);
-        volumeSlider.value = value;
-        /*soundMixer.GetFloat("volumeSound", out value2);
-        soundSlider.value = value2;*/
+
     }
 
     void FixedUpdate()
@@ -77,7 +78,8 @@ public class CharacterController : MonoBehaviour
             {
                 animator.SetBool("jump", true);
                 grounded = false;
-                audioSource.PlayOneShot(jumpClip);
+                //audioSource.PlayOneShot(jumpClip);
+                audioManager.PlaySFX(audioManager.jump);
                 rb.velocity = new Vector2(rb.velocity.x, jump);
             }
         }
@@ -106,9 +108,10 @@ public class CharacterController : MonoBehaviour
         {
             animator.SetBool("dead", true);
             Instantiate(BloodEffect, transform.position, transform.rotation);
-            audioSource.PlayOneShot(deathClip);
+            //audioSource.PlayOneShot(deathClip);
+            audioManager.PlaySFX(audioManager.dead2);
             StartCoroutine(waiter());
-        }  
+        }
 
         IEnumerator waiter()
         {
@@ -118,7 +121,8 @@ public class CharacterController : MonoBehaviour
             hearts--;
             if (hearts <= 0)
             {
-                audioSource.PlayOneShot(gameOverClip);
+                //audioSource.PlayOneShot(gameOverClip);
+                audioManager.PlaySFX(audioManager.gameover);
                 replay();
             }
             else
@@ -158,13 +162,4 @@ public class CharacterController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void SetMusic()
-    {
-        mixer.SetFloat("music", volumeSlider.value);
-    }
-
-   /* public void SetSound()
-    {
-        soundMixer.SetFloat("volumeSound", soundSlider.value);
-    }*/
 }
